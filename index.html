@@ -351,7 +351,7 @@
   <main>
 
     <!-- 1 · УЗНАВАНИЕ и ОБЕЩАНИЕ: студия, оффер сменяется «приёмом по шагам» (выбор, сеанс, уход) -->
-    <section id="top" data-v-act="pin" data-v-span="3" data-v-drift="#1e1815" aria-label="Пирсинг и тату в Челябинске: онлайн-запись к мастеру">
+    <section id="top" data-v-act="pin" data-v-span="2.6" data-v-drift="#1e1815" aria-label="Пирсинг и тату в Челябинске: онлайн-запись к мастеру">
       <div data-v-stage class="hero">
         <div class="hero__photo">
           <div class="v-layer hero__stack" data-v-parallax="-0.25">
@@ -368,7 +368,7 @@
           <span class="v-nums">11:00–20:30</span>
         </div>
 
-        <div class="v-copy v-copy--lead hero__copy" data-v-cue="0 0.3 0 0.08">
+        <div class="v-copy v-copy--lead hero__copy" data-v-cue="0 0.16 0 0.06">
           <span class="v-label hero__label">Пирсинг · тату</span>
           <h1 class="v-display v-display--xl" data-v-kinetic="lines">Пирсинг и тату в Челябинске: онлайн-запись к мастеру</h1>
           <p class="v-lede">Мастер объяснит, как ухаживать, средства для ухода – на месте. Цену называем до процедуры.</p>
@@ -378,25 +378,25 @@
           </div>
         </div>
 
-        <div class="shift" data-v-cue="0.3 1 0.08 0">
+        <div class="shift" data-v-cue="0.16 1 0.06 0">
           <div>
             <span class="v-label">Приём по шагам</span>
             <h2 class="v-display v-display--md">От выбора до ухода – всё в одной студии</h2>
           </div>
           <ol class="shift__list">
-            <li class="shift__win" style="--a: 0; --b: .34">
+            <li class="shift__win" style="--a: 0; --b: .44">
               <span class="shift__when"><i aria-hidden="true"></i>Выбор</span>
               <b>Украшение или эскиз</b>
               <span class="shift__desc">Вместе с мастером решаете, что и куда, пока ничего не сделано</span>
               <em class="v-nums">цена до сеанса</em>
             </li>
-            <li class="shift__win" style="--a: .33; --b: .67">
+            <li class="shift__win" style="--a: .43; --b: .72">
               <span class="shift__when"><i aria-hidden="true"></i>Сеанс</span>
               <b>Пирсинг или тату</b>
               <span class="shift__desc">Прокол или татуировка по тому, что выбрали, без сюрпризов в кресле</span>
               <em class="v-nums">пирсинг от 1&nbsp;200&nbsp;₽</em>
             </li>
-            <li class="shift__win" style="--a: .66; --b: 1">
+            <li class="shift__win" style="--a: .71; --b: 1">
               <span class="shift__when"><i aria-hidden="true"></i>Уход</span>
               <b>Что делать после</b>
               <span class="shift__desc">Объясняем, как ухаживать, средства для ухода – на месте</span>
@@ -674,7 +674,7 @@
 <script>
   // На телефоне пины короче: data-v-span из CSS не поменять, правим атрибут до монтирования.
   if (window.matchMedia('(max-width: 860px)').matches) {
-    document.getElementById('top').setAttribute('data-v-span', '2.6');
+    document.getElementById('top').setAttribute('data-v-span', '2.4');
     document.getElementById('mastera').setAttribute('data-v-span', '2.2');
   }
   Vibe.mount(document.querySelector('.v-page'));
@@ -694,7 +694,7 @@
     var names = ['Выбор', 'Сеанс', 'Уход'], last = -1, live = false;
     function tick() {
       var p = parseFloat(getComputedStyle(act).getPropertyValue('--v-p')) || 0;
-      var i = p < 0.33 ? 0 : p < 0.66 ? 1 : 2;
+      var i = p < 0.44 ? 0 : p < 0.72 ? 1 : 2;
       if (i !== last) { last = i; name.textContent = names[i]; num.textContent = 'шаг ' + (i + 1) + ' из 3'; }
       if (live) requestAnimationFrame(tick);
     }
